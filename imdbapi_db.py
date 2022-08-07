@@ -22,11 +22,7 @@ for m in range(0, row_num): #报错时修改这里
     
     #先登录账号
     url = "https://imdb-api.com/en/API/Title/#/"+str(tt) #自行申请账号获取token
-    
-    payload = {}
-    headers= {}
-    
-    response = requests.request("GET", url, headers=headers, data = payload)
+    response = requests.request("GET", url)
     
     info = json.loads(response.text.encode('utf8'))
 
